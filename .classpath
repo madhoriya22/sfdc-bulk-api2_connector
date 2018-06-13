@@ -2,19 +2,18 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/partner.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/force-wsc-42.0.0-uber.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/commons-codec-1.10.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/fluent-hc-4.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/httpclient-4.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/httpclient-cache-4.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/httpclient-win-4.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/httpcore-4.4.9.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/httpmime-4.5.5.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/jna-4.4.0.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/httpcomponents-client-4.5.5/lib/jna-platform-4.4.0.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/com.fasterxml.jackson.databind.jar"/>
-	<classpathentry kind="lib" path="C:/Amit Works/Jemstep/com.fasterxml.jackson.core.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/partner.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/fluent-hc-4.5.5.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/httpclient-4.5.5.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/httpclient-cache-4.5.5.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/httpclient-win-4.5.5.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/httpcore-4.4.9.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/httpmime-4.5.5.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/jna-4.4.0.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/lib/jna-platform-4.4.0.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/Jemstep/com.fasterxml.jackson.databind.jar"/>
+	<classpathentry kind="lib" path="<SYSTEM_PATH>/Jemstep/com.fasterxml.jackson.core.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
