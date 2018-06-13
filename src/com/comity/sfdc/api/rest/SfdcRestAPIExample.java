@@ -29,10 +29,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 public class SfdcRestAPIExample {
 	
 	private static final String TOKEN_URL =  "https://login.salesforce.com/services/oauth2/token";
-	private static final String CLIENT_ID = "3MVG9zlTNB8o8BA2a2O8Sk7WBpFYPjkSzEbDfrRLvkoa.d8HWpWNcKfLhxrYQfeep3IYpQxgao77PkfAhnesw";
-	private static final String CLIENT_SECRET = "4754697250069212474";
+	private static final String CLIENT_ID = "<CLIENT_ID_FROM_CONNECTED_APP";
+	private static final String CLIENT_SECRET = "<CLIENT_SECRET_FROM_CONNECTED_APP>";
 	private static final String GRANT_TYPE = "refresh_token";
-	private static final String REFRESH_TOKEN = "5Aep861UTWIWNgl0keF5ChpqGNeTY9Ioz06zbUwhYbgURa3jrMzpiXTMzGsmeaD3aqN459CgMrmxqU7ZhVzuxC7";
+	private static final String REFRESH_TOKEN = "<REFRESH_TOKEN_FROM_REST_CALL>";
 	private static final String BEARER = "Bearer";
 	private static final String CONTENT_TYPE_JSON = "application/json";
 	private static final String CONTENT_TYPE_CSV = "text/csv";
