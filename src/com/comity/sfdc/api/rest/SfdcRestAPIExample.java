@@ -29,10 +29,10 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 public class SfdcRestAPIExample {
 	
 	private static final String TOKEN_URL =  "https://login.salesforce.com/services/oauth2/token";
-	private static final String CLIENT_ID = "<CLIENT_ID_FROM_CONNECTED_APP";
-	private static final String CLIENT_SECRET = "<CLIENT_SECRET_FROM_CONNECTED_APP>";
+	private static final String CLIENT_ID = "3MVG9zlTNB8o8BA2a2O8Sk7WBpFYPjkSzEbDfrRLvkoa.d8HWpWNcKfLhxrYQfeep3IYpQxgao77PkfAhnesw";
+	private static final String CLIENT_SECRET = "4754697250069212474";
 	private static final String GRANT_TYPE = "refresh_token";
-	private static final String REFRESH_TOKEN = "<REFRESH_TOKEN_FROM_REST_CALL>";
+	private static final String REFRESH_TOKEN = "5Aep861UTWIWNgl0keF5ChpqGNeTY9Ioz06zbUwhYbgURa3jrMzpiXTMzGsmeaD3aqN459CgMrmxqU7ZhVzuxC7";
 	private static final String BEARER = "Bearer";
 	private static final String CONTENT_TYPE_JSON = "application/json";
 	private static final String CONTENT_TYPE_CSV = "text/csv";
@@ -40,12 +40,52 @@ public class SfdcRestAPIExample {
 	private static final String REST_URI = "/services/data/v42.0/jobs";
 	private static final String CREATE_JOB_URI = "/ingest/";
 	private static final String UPLOAD_JOB_URI = "/batches/";
+	private static final String CODE = "<code received from api call>";
+	private static final String GRANT_TYPE_CODE = "authorization_code";
+	private static final String REDIRECT_URI = "https://104.211.222.237:8080/services/oauth2/success";
 	
 	public static void main(String args[]) {
-		RefreshTokenResponse wrapper = getAccessTokenFromRefreshToken();
+		getRefreshTokenFromCode();
+		/*RefreshTokenResponse wrapper = getAccessTokenFromRefreshToken();
 		CreateJobResponse createJobResponse = createJob(wrapper);
 		uploadDataToJob(wrapper, createJobResponse.id);
-		markDataLoadCompleteForJob(wrapper, createJobResponse.id);
+		markDataLoadCompleteForJob(wrapper, createJobResponse.id);*/
+	}
+	
+	private static void getRefreshTokenFromCode() {
+		CloseableHttpClient httpclient = null;
+        try {
+            httpclient = HttpClients.createDefault();
+
+            final List<NameValuePair> loginParams = new ArrayList<NameValuePair>();
+            loginParams.add(new BasicNameValuePair("code", CODE));
+            loginParams.add(new BasicNameValuePair("grant_type", GRANT_TYPE_CODE));
+            loginParams.add(new BasicNameValuePair("client_id", CLIENT_ID));
+            loginParams.add(new BasicNameValuePair("client_secret", CLIENT_SECRET));
+            loginParams.add(new BasicNameValuePair("redirect_uri", REDIRECT_URI));
+
+            final HttpPost post = new HttpPost(TOKEN_URL);
+            post.setEntity(new UrlEncodedFormEntity(loginParams));
+
+            final HttpResponse loginResponse = httpclient.execute(post);
+
+            // parse
+            final ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
+            final JsonNode loginResult = mapper.readValue(loginResponse.getEntity().getContent(), JsonNode.class);
+            
+            System.out.println("loginResult -> "+loginResult);
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        finally {
+        	try {
+				httpclient.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+        }
 	}
 	
 	private static RefreshTokenResponse getAccessTokenFromRefreshToken() {
